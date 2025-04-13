@@ -26,7 +26,7 @@ int Graph::getEdges(){
 }
 
 int Graph::getAdj(Edge* e){
-    return this->G[e->getStartVert()][e->getEndVert()];
+    return this->G[e->getStartVert()-1][e->getEndVert()-1];
 }
 
 void Graph::setVertices(int nVert){
@@ -37,12 +37,13 @@ void Graph::setEdges(int nEdge){
     this->numOfEdges = nEdge;
 }
 void Graph::setAdj(Edge* e){
-    this->G[e->getStartVert()][e->getEndVert()] = 1;
-    this->G[e->getEndVert()][e->getStartVert()] = 1;
+    this->G[e->getStartVert()-1][e->getEndVert()-1] = 1;
+    this->G[e->getEndVert()-1][e->getStartVert()-1] = 1;
 }
 
 void Graph::initializeGraph(int nVert){
     for(int i=0; i<nVert; ++i){
+        this->G[i] = (int*)malloc(nVert*sizeof(int));
         for(int j=0; j<nVert; ++j){
             this->G[i][j] = 0; 
         }
@@ -52,7 +53,6 @@ void Graph::initializeGraph(int nVert){
 void Graph::printGraph(){
     int len = this->numOfVertices;
     for(int i=0; i<len; ++i){
-        this->G[i] = (int*)malloc(len*sizeof(int));
         for(int j=0; j<len; ++j){
             printf("%i ",this->G[i][j]); 
         }
