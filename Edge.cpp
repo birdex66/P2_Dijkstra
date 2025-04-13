@@ -20,6 +20,10 @@ void Edge::setWeight(int newWeight){
     this->weight = newWeight;
 }
 
+void Edge::incWeight(){
+    ++(this->weight);
+}
+
 int Edge::getStartVert(){
     return this->startVert;
 }
