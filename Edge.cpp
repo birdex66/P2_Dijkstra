@@ -19,3 +19,20 @@ int Edge::getWeight(){
 void Edge::setWeight(int newWeight){
     this->weight = newWeight;
 }
+
+int Edge::getStartVert(){
+    return this->startVert;
+}
+
+void Edge::setStartVert(int sVert){
+    this->startVert = sVert;
+}
+
+int Edge::getEndVert(){
+    return this->endVert;
+}
+
+void Edge::setEndVert(int eVert){
+    this->endVert = eVert;
+}
+

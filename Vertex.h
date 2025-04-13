@@ -7,6 +7,7 @@ class Vertex{
        int degree;
     public:
         Vertex();
+        Vertex(int,int);
         int getIndex();
         int getDegree();
         void setIndex(int);

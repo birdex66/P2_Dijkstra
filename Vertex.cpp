@@ -5,8 +5,13 @@ Vertex::Vertex(){
     this->degree = -1;
 }
 
+Vertex::Vertex(int i,int deg){
+    this->index = i;
+    this->degree = deg;
+}
+    
 int Vertex::getIndex(){
-    return this->Index;
+    return this->index;
 }
 
 int Vertex::getDegree(){
