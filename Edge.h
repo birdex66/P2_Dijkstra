@@ -9,12 +9,16 @@ class Edge{
     public:
         Edge();
         Edge(int,int);
+
+        //Getter Methods
         int getWeight();
+        int getStartVert();
+        int getEndVert();
+        
+        //Setter Methods
+        void setStartVert(int);
         void setWeight(int);
         void incWeight();
-        int getStartVert();
-        void setStartVert(int);
-        int getEndVert();
         void setEndVert(int);
 
 };

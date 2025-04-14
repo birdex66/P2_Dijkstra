@@ -10,10 +10,12 @@ class Vertex{
         Vertex();
         Vertex(int,int);
 
+        // Getter Methods
         int getIndex();
         int getDegree();
         bool getVisit();
 
+        // Setter Methods
         void setIndex(int);
         void setDegree(int);
         void setVisit(bool);

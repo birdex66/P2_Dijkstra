@@ -14,11 +14,14 @@ class Queue{
     public:
         Queue();
         ~Queue();
-        void enqueue(int);
-        int dequeue();
-        int getHead();
+        void enqueue(int); // Add element to tail
+        int dequeue(); //Remove element from head
+        
+        //Getter Methods
+        int getHead(); 
         int getTail();
-        bool isEmpty();
+
+        bool isEmpty(); //Return if queue empty
 };
 
 

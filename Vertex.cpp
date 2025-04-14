@@ -10,7 +10,9 @@ Vertex::Vertex(int i,int deg){
     this->degree = deg;
     this->visited = false;
 }
-    
+
+/* Getter Methods */
+
 int Vertex::getIndex(){
     return this->index;
 }
@@ -22,6 +24,8 @@ int Vertex::getDegree(){
 bool Vertex::getVisit(){
     return this->visited;
 }
+
+/* Setter Methods */
 
 void Vertex::setIndex(int index){
     this->index = index;

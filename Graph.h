@@ -7,15 +7,17 @@ class Graph{
     private:
         int numOfVertices;
         int numOfEdges;
-        Edge*** G;
+        Edge*** G; //2d Array of Edge* pointers
     public:
         Graph(int,int);
         ~Graph();
 
+        //Getter Methods
         int getVertices();
         int getEdges();
         Edge** getAdjRow(int);
         
+        //Setter Methods
         void setVertices(int);
         void setEdges(int);
         void setAdj(Edge*);

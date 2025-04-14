@@ -12,8 +12,29 @@ Edge::Edge(int start, int end){
     this->weight = 1;
 }
 
+
+/* Getter Methods */
+
 int Edge::getWeight(){
     return this->weight;
+}
+
+int Edge::getStartVert(){
+    return this->startVert;
+}
+
+int Edge::getEndVert(){
+    return this->endVert;
+}
+
+/* Setter Methods */
+
+void Edge::setStartVert(int sVert){
+    this->startVert = sVert;
+}
+
+void Edge::setEndVert(int eVert){
+    this->endVert = eVert;
 }
 
 void Edge::setWeight(int newWeight){
@@ -22,21 +43,5 @@ void Edge::setWeight(int newWeight){
 
 void Edge::incWeight(){
     ++(this->weight);
-}
-
-int Edge::getStartVert(){
-    return this->startVert;
-}
-
-void Edge::setStartVert(int sVert){
-    this->startVert = sVert;
-}
-
-int Edge::getEndVert(){
-    return this->endVert;
-}
-
-void Edge::setEndVert(int eVert){
-    this->endVert = eVert;
 }
 

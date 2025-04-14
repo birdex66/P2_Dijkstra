@@ -7,15 +7,16 @@ Queue::Queue(){
     this->tail = NULL;
 }
 
+// Destructor
 Queue::~Queue(){
-    Node* temp;
-    while(this->head){
-        temp = this->head;
+    while(this->head){ //Sets node to head, moves head to next node then deletes head pointer 
+        Node* temp = this->head;
         this->head = this->head->next;
         delete temp;
     }
 }
 
+// Add element to tail
 void Queue::enqueue(int ref){
     Node* n = new Node();
     n->key = ref;
@@ -26,6 +27,8 @@ void Queue::enqueue(int ref){
     }
     ++(this->size);
 }
+
+// Remove element from head
 int Queue::dequeue(){
     int ref;
     if(isEmpty()) ref = -1;
@@ -35,8 +38,10 @@ int Queue::dequeue(){
         if(!this->head) this->tail = NULL;
     }
     --(this->size);
-    return ref
+    return ref;
 }
+
+/* Getter Methods */
 int Queue::getHead(){
     return this->head->key; 
 }
@@ -44,6 +49,8 @@ int Queue::getHead(){
 int Queue::getTail(){
     return this->tail->key;
 }
+
+//Returns if Queue is empty
 bool Queue::isEmpty(){
     return 0 == this->size;
 }
