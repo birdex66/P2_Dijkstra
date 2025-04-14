@@ -1,5 +1,5 @@
-all: Main.o Edge.o Vertex.o Graph.o 
-		g++ -g -Wall Main.o Edge.o Vertex.o Graph.o -o dijkstra
+all: Main.o Edge.o Vertex.o Graph.o Queue.o
+		g++ -g -Wall Main.o Edge.o Vertex.o Graph.o Queue.o -o dijkstra
 
 Edge.o: Edge.h Edge.cpp
 		g++ -g -Wall -c Edge.cpp
@@ -9,6 +9,9 @@ Vertex.o: Vertex.h Vertex.cpp
 
 Graph.o: Graph.h Graph.cpp
 		g++ -g -Wall -c Graph.cpp
+
+Queue.o: Queue.h Queue.cpp
+		g++ -g -Wall -c Queue.cpp
 
 Main.o: Main.cpp
 		g++ -g -Wall -c Main.cpp

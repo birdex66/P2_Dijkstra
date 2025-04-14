@@ -7,14 +7,14 @@ class Graph{
     private:
         int numOfVertices;
         int numOfEdges;
-        int** G;
+        Edge*** G;
     public:
         Graph(int,int);
         ~Graph();
 
         int getVertices();
         int getEdges();
-        int getAdj(Edge*);
+        Edge** getAdjRow(int);
         
         void setVertices(int);
         void setEdges(int);
