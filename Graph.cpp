@@ -5,16 +5,20 @@
 Graph::Graph(int nVert, int nEdge){
     this->numOfVertices = nVert;
     this->numOfEdges = nEdge;
-    this->G = (Edge***)malloc(nVert*sizeof(Edge**)); // initalizes array with Edge** pointers
+    //this->G = (Edge***)malloc(nVert*sizeof(Edge**)); // initalizes array with Edge** pointers
+    this->G = new Edge**[nVert];
     initializeGraph(nVert);
 }
 
 Graph::~Graph(){
     int len = this->numOfVertices;
     for(int i=0; i<len; ++i){
-        free(this->G[i]); //frees each row of Edge**
+        for(int j=0; j<len; ++j){
+            delete this->G[i][j];
+        }
+        delete[] this->G[i]; //frees each row of Edge**
     }
-    delete this->G; //frees Graph
+    delete[] this->G; //frees Graph
 }
 
 /* Get Methods */
@@ -45,8 +49,15 @@ void Graph::setEdges(int nEdge){
 
 // Establishes edge connection
 void Graph::setAdj(Edge* e){
-    this->G[e->getStartVert()-1][e->getEndVert()-1]->setWeight(1);
-    this->G[e->getEndVert()-1][e->getStartVert()-1]->setWeight(1);
+    int start = e->getStartVert()-1;   
+    int end = e->getEndVert()-1;
+
+    if(start >= 0 && start < this->numOfVertices && end >=0 && end < this->numOfVertices){
+        this->G[start][end]->setWeight(1);
+        this->G[end][start]->setWeight(1);
+    }else{
+        return;
+    }
 }
 
 void Graph::initializeGraph(int nVert){

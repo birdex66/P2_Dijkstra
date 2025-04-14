@@ -9,6 +9,10 @@ Queue::Queue(){
 
 // Destructor
 Queue::~Queue(){
+    while(!isEmpty()){
+        dequeue();
+    }
+
     while(this->head){ //Sets node to head, moves head to next node then deletes head pointer 
         Node* temp = this->head;
         this->head = this->head->next;
@@ -33,9 +37,11 @@ int Queue::dequeue(){
     int ref;
     if(isEmpty()) ref = -1;
     else{
+        Node* refN = this->head;
         ref = this->head->key;
         this->head = this->head->next;
         if(!this->head) this->tail = NULL;
+        delete refN;
     }
     --(this->size);
     return ref;

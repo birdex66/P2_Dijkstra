@@ -12,7 +12,6 @@ Edge::Edge(int start, int end){
     this->weight = 1;
 }
 
-
 /* Getter Methods */
 
 int Edge::getWeight(){

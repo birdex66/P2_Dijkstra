@@ -4,7 +4,6 @@
 #include "Queue.h"
 
 #include <iostream>
-#include <iomanip>
 
 using namespace std;
 
@@ -60,6 +59,7 @@ int main(){
         }
 
         G->setAdj(newEdge); //add to graph
+        delete newEdge;
         ++i;
     }
 
@@ -85,7 +85,13 @@ int main(){
         Dijkstra(arrOdd[j],list,G,numOfVertices); //Dijikstra for array of odd vertices
     }
 
+
+    for(int k=0; k<numOfVertices; ++k){
+        delete list[k];
+    }
+    
     free(arrOdd);
+    delete G;
     return 0;
 }
 
